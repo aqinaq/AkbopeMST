@@ -10,34 +10,34 @@
       ],
       "edges": [
         {
-          "from": "B",
+          "from": "D",
           "to": "C",
-          "weight": 77
+          "weight": 54
         },
         {
           "from": "C",
           "to": "A",
-          "weight": 55
+          "weight": 96
         },
         {
           "from": "A",
+          "to": "B",
+          "weight": 21
+        },
+        {
+          "from": "B",
           "to": "D",
-          "weight": 19
-        },
-        {
-          "from": "A",
-          "to": "B",
-          "weight": 4
+          "weight": 47
         },
         {
           "from": "D",
-          "to": "B",
-          "weight": 54
+          "to": "A",
+          "weight": 57
         },
         {
-          "from": "D",
+          "from": "B",
           "to": "C",
-          "weight": 65
+          "weight": 35
         }
       ]
     },
@@ -48,58 +48,69 @@
         "B",
         "C",
         "D",
-        "E"
+        "E",
+        "F"
       ],
       "edges": [
         {
-          "from": "C",
+          "from": "D",
+          "to": "F",
+          "weight": 53
+        },
+        {
+          "from": "F",
           "to": "B",
-          "weight": 63
+          "weight": 92
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "weight": 64
+        },
+        {
+          "from": "C",
+          "to": "E",
+          "weight": 71
+        },
+        {
+          "from": "E",
+          "to": "A",
+          "weight": 100
+        },
+        {
+          "from": "C",
+          "to": "A",
+          "weight": 47
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "weight": 8
+        },
+        {
+          "from": "D",
+          "to": "A",
+          "weight": 94
+        },
+        {
+          "from": "F",
+          "to": "E",
+          "weight": 73
         },
         {
           "from": "B",
           "to": "E",
-          "weight": 34
+          "weight": 35
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "weight": 76
         },
         {
           "from": "E",
           "to": "D",
-          "weight": 42
-        },
-        {
-          "from": "D",
-          "to": "A",
-          "weight": 26
-        },
-        {
-          "from": "B",
-          "to": "A",
-          "weight": 20
-        },
-        {
-          "from": "A",
-          "to": "C",
-          "weight": 88
-        },
-        {
-          "from": "E",
-          "to": "A",
-          "weight": 16
-        },
-        {
-          "from": "D",
-          "to": "C",
-          "weight": 43
-        },
-        {
-          "from": "D",
-          "to": "B",
-          "weight": 3
-        },
-        {
-          "from": "C",
-          "to": "E",
-          "weight": 69
+          "weight": 100
         }
       ]
     },
@@ -114,59 +125,100 @@
       ],
       "edges": [
         {
+          "from": "C",
+          "to": "E",
+          "weight": 11
+        },
+        {
           "from": "E",
+          "to": "D",
+          "weight": 60
+        },
+        {
+          "from": "D",
           "to": "B",
-          "weight": 91
+          "weight": 45
         },
         {
           "from": "B",
           "to": "A",
-          "weight": 38
+          "weight": 73
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "weight": 70
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "weight": 20
+        },
+        {
+          "from": "E",
+          "to": "A",
+          "weight": 10
         },
         {
           "from": "A",
           "to": "D",
-          "weight": 44
-        },
-        {
-          "from": "D",
-          "to": "C",
-          "weight": 23
+          "weight": 13
         },
         {
           "from": "C",
+          "to": "D",
+          "weight": 74
+        },
+        {
+          "from": "B",
           "to": "E",
-          "weight": 57
-        },
-        {
-          "from": "C",
-          "to": "A",
-          "weight": 57
-        },
-        {
-          "from": "E",
-          "to": "A",
-          "weight": 33
-        },
-        {
-          "from": "B",
-          "to": "D",
-          "weight": 87
-        },
-        {
-          "from": "B",
-          "to": "C",
-          "weight": 85
-        },
-        {
-          "from": "E",
-          "to": "D",
-          "weight": 64
+          "weight": 60
         }
       ]
     },
     {
       "id": 4,
+      "nodes": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "edges": [
+        {
+          "from": "D",
+          "to": "B",
+          "weight": 23
+        },
+        {
+          "from": "B",
+          "to": "A",
+          "weight": 14
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "weight": 27
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "weight": 60
+        },
+        {
+          "from": "C",
+          "to": "B",
+          "weight": 93
+        },
+        {
+          "from": "D",
+          "to": "A",
+          "weight": 62
+        }
+      ]
+    },
+    {
+      "id": 5,
       "nodes": [
         "A",
         "B",
@@ -177,120 +229,79 @@
       ],
       "edges": [
         {
-          "from": "A",
-          "to": "B",
-          "weight": 18
-        },
-        {
-          "from": "B",
-          "to": "E",
-          "weight": 76
-        },
-        {
-          "from": "E",
-          "to": "D",
-          "weight": 49
-        },
-        {
           "from": "D",
           "to": "C",
-          "weight": 40
+          "weight": 3
         },
         {
           "from": "C",
           "to": "F",
-          "weight": 33
-        },
-        {
-          "from": "D",
-          "to": "B",
-          "weight": 18
-        },
-        {
-          "from": "E",
-          "to": "C",
-          "weight": 92
-        },
-        {
-          "from": "B",
-          "to": "C",
-          "weight": 93
-        },
-        {
-          "from": "A",
-          "to": "C",
-          "weight": 38
-        },
-        {
-          "from": "A",
-          "to": "D",
-          "weight": 88
+          "weight": 70
         },
         {
           "from": "F",
-          "to": "E",
-          "weight": 90
-        },
-        {
-          "from": "B",
-          "to": "F",
-          "weight": 84
+          "to": "A",
+          "weight": 76
         },
         {
           "from": "A",
+          "to": "E",
+          "weight": 2
+        },
+        {
+          "from": "E",
+          "to": "B",
+          "weight": 4
+        },
+        {
+          "from": "C",
           "to": "E",
           "weight": 82
         },
         {
           "from": "F",
-          "to": "D",
-          "weight": 83
-        },
-        {
-          "from": "A",
-          "to": "F",
-          "weight": 99
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "nodes": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "edges": [
-        {
-          "from": "A",
-          "to": "D",
-          "weight": 11
+          "to": "B",
+          "weight": 39
         },
         {
           "from": "D",
           "to": "B",
-          "weight": 69
+          "weight": 81
         },
         {
           "from": "B",
-          "to": "C",
-          "weight": 59
+          "to": "A",
+          "weight": 100
+        },
+        {
+          "from": "F",
+          "to": "E",
+          "weight": 32
         },
         {
           "from": "D",
-          "to": "C",
-          "weight": 71
+          "to": "A",
+          "weight": 85
         },
         {
-          "from": "A",
-          "to": "B",
-          "weight": 100
+          "from": "F",
+          "to": "D",
+          "weight": 27
         },
         {
           "from": "C",
           "to": "A",
-          "weight": 33
+          "weight": 6
+        },
+        {
+          "from": "E",
+          "to": "D",
+          "weight": 32
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "weight": 50
         }
       ]
     }

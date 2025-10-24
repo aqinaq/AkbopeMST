@@ -1,3 +1,349 @@
 {
-  "results": []
+  "results": [
+    {
+      "graph_id": 1,
+      "input_stats": {
+        "vertices": 4,
+        "edges": 6
+      },
+      "prim": {
+        "mst_edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "weight": 21
+          },
+          {
+            "from": "B",
+            "to": "C",
+            "weight": 35
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "weight": 47
+          }
+        ],
+        "total_cost": 103,
+        "operations": {
+          "heapPush": 6,
+          "heapPop": 3,
+          "edgeChecks": 3
+        },
+        "execution_time_ns": 15107.0
+      },
+      "kruskal": {
+        "mst_edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "weight": 21
+          },
+          {
+            "from": "B",
+            "to": "C",
+            "weight": 35
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "weight": 47
+          }
+        ],
+        "total_cost": 103,
+        "operations": {
+          "unionOps": 3,
+          "comparisons": 3,
+          "findOps": 16
+        },
+        "execution_time_ns": 18664.0
+      }
+    },
+    {
+      "graph_id": 2,
+      "input_stats": {
+        "vertices": 6,
+        "edges": 12
+      },
+      "prim": {
+        "mst_edges": [
+          {
+            "from": "A",
+            "to": "C",
+            "weight": 47
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "weight": 8
+          },
+          {
+            "from": "D",
+            "to": "F",
+            "weight": 53
+          },
+          {
+            "from": "C",
+            "to": "B",
+            "weight": 64
+          },
+          {
+            "from": "B",
+            "to": "E",
+            "weight": 35
+          }
+        ],
+        "total_cost": 207,
+        "operations": {
+          "heapPush": 12,
+          "heapPop": 5,
+          "edgeChecks": 5
+        },
+        "execution_time_ns": 5333.0
+      },
+      "kruskal": {
+        "mst_edges": [
+          {
+            "from": "C",
+            "to": "D",
+            "weight": 8
+          },
+          {
+            "from": "B",
+            "to": "E",
+            "weight": 35
+          },
+          {
+            "from": "C",
+            "to": "A",
+            "weight": 47
+          },
+          {
+            "from": "D",
+            "to": "F",
+            "weight": 53
+          },
+          {
+            "from": "B",
+            "to": "C",
+            "weight": 64
+          }
+        ],
+        "total_cost": 207,
+        "operations": {
+          "unionOps": 5,
+          "comparisons": 5,
+          "findOps": 22
+        },
+        "execution_time_ns": 3645.0
+      }
+    },
+    {
+      "graph_id": 3,
+      "input_stats": {
+        "vertices": 5,
+        "edges": 10
+      },
+      "prim": {
+        "mst_edges": [
+          {
+            "from": "A",
+            "to": "E",
+            "weight": 10
+          },
+          {
+            "from": "E",
+            "to": "C",
+            "weight": 11
+          },
+          {
+            "from": "A",
+            "to": "D",
+            "weight": 13
+          },
+          {
+            "from": "C",
+            "to": "B",
+            "weight": 20
+          }
+        ],
+        "total_cost": 54,
+        "operations": {
+          "heapPush": 10,
+          "heapPop": 4,
+          "edgeChecks": 4
+        },
+        "execution_time_ns": 11537.0
+      },
+      "kruskal": {
+        "mst_edges": [
+          {
+            "from": "E",
+            "to": "A",
+            "weight": 10
+          },
+          {
+            "from": "C",
+            "to": "E",
+            "weight": 11
+          },
+          {
+            "from": "A",
+            "to": "D",
+            "weight": 13
+          },
+          {
+            "from": "B",
+            "to": "C",
+            "weight": 20
+          }
+        ],
+        "total_cost": 54,
+        "operations": {
+          "unionOps": 4,
+          "comparisons": 4,
+          "findOps": 20
+        },
+        "execution_time_ns": 3043.0
+      }
+    },
+    {
+      "graph_id": 4,
+      "input_stats": {
+        "vertices": 4,
+        "edges": 6
+      },
+      "prim": {
+        "mst_edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "weight": 14
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "weight": 23
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "weight": 27
+          }
+        ],
+        "total_cost": 64,
+        "operations": {
+          "heapPush": 6,
+          "heapPop": 3,
+          "edgeChecks": 3
+        },
+        "execution_time_ns": 6011.0
+      },
+      "kruskal": {
+        "mst_edges": [
+          {
+            "from": "B",
+            "to": "A",
+            "weight": 14
+          },
+          {
+            "from": "D",
+            "to": "B",
+            "weight": 23
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "weight": 27
+          }
+        ],
+        "total_cost": 64,
+        "operations": {
+          "unionOps": 3,
+          "comparisons": 3,
+          "findOps": 14
+        },
+        "execution_time_ns": 4356.0
+      }
+    },
+    {
+      "graph_id": 5,
+      "input_stats": {
+        "vertices": 6,
+        "edges": 15
+      },
+      "prim": {
+        "mst_edges": [
+          {
+            "from": "A",
+            "to": "E",
+            "weight": 2
+          },
+          {
+            "from": "E",
+            "to": "B",
+            "weight": 4
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "weight": 6
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "weight": 3
+          },
+          {
+            "from": "D",
+            "to": "F",
+            "weight": 27
+          }
+        ],
+        "total_cost": 42,
+        "operations": {
+          "heapPush": 15,
+          "heapPop": 5,
+          "edgeChecks": 5
+        },
+        "execution_time_ns": 15842.0
+      },
+      "kruskal": {
+        "mst_edges": [
+          {
+            "from": "A",
+            "to": "E",
+            "weight": 2
+          },
+          {
+            "from": "D",
+            "to": "C",
+            "weight": 3
+          },
+          {
+            "from": "E",
+            "to": "B",
+            "weight": 4
+          },
+          {
+            "from": "C",
+            "to": "A",
+            "weight": 6
+          },
+          {
+            "from": "F",
+            "to": "D",
+            "weight": 27
+          }
+        ],
+        "total_cost": 42,
+        "operations": {
+          "unionOps": 5,
+          "comparisons": 5,
+          "findOps": 24
+        },
+        "execution_time_ns": 6343.0
+      }
+    }
+  ]
 }
