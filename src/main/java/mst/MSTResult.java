@@ -30,7 +30,6 @@ public class MSTResult {
     public Map<String,Integer> getOps() { return ops; }
     public double getTimeNs() { return timeNs; }
     public long getTimeMs() { return (long) timeNs; }
-
     public int getVertexCount() { return nVertices; }
     public int getEdgeCount() { return nEdges; }
     public Map<String, Integer> getOperations() { return ops; }
