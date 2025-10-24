@@ -24,6 +24,32 @@ public class Main {
             List<Graph> graphs = DataLoader.loadGraphs(inputFile);
             JsonArray results = new JsonArray();
 
+
+            for (Graph g : graphs) {
+
+                System.out.println("Loaded Graph ID: " + g.getId());
+                System.out.println("Graph structure:\n" + g);
+                String imgName = "graph_" + g.getId() + ".png";
+                GraphVisualizer.saveGraphImage(g, imgName);
+
+                MSTResult prim = PrimAlgorithm.runPrim(g, 0);
+                MSTResult kruskal = KruskalAlgorithm.runKruskal(g);
+
+                JsonObject graphResult = new JsonObject();
+                graphResult.addProperty("graph_id", g.getId());
+
+                JsonObject inputStats = new JsonObject();
+                inputStats.addProperty("vertices", prim.getVertexCount());
+                inputStats.addProperty("edges", prim.getEdgeCount());
+                graphResult.add("input_stats", inputStats);
+
+                graphResult.add("prim", buildAlgorithmJson(g, prim));
+                graphResult.add("kruskal", buildAlgorithmJson(g, kruskal));
+
+                results.add(graphResult);
+            }
+
+
             JsonObject root = new JsonObject();
             root.add("results", results);
 
