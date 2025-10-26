@@ -103,6 +103,7 @@ Both algorithms produce the same MST cost.
 4. Java SE Documentation  
 
 ---
-## Final Conclusion > Both Prim’s and Kruskal’s algorithms were successfully implemented, tested, and benchmarked.  
+## Final Conclusion 
+> Both Prim’s and Kruskal’s algorithms were successfully implemented, tested, and benchmarked.  
 > Kruskal performs better for small, sparse graphs; Prim becomes superior for large or dense graphs.  
 > Experimental data matches the theoretical expectations for MST algorithms.
