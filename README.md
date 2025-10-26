@@ -1,102 +1,108 @@
-## Assignment 3 — Minimum Spanning Tree (MST) Optimization
-# Akbope Bakytkeldy | SE-2426
+# Assignment 3 — Minimum Spanning Tree (MST) Optimization  
+## Akbope Bakytkeldy | SE-2426  
+
 ## Overview
 This project implements and compares **Prim’s** and **Kruskal’s** algorithms for finding the **Minimum Spanning Tree (MST)** of a weighted graph.  
-Both algorithms were implemented in **Java** using only the standard library 
-The goal was to measure performance differences, operation counts, and MST cost consistency across different graph sizes
+Both algorithms were implemented in **Java** using only the standard library.  
+The goal was to evaluate performance, operation counts, and MST cost consistency across various graph sizes.
 
 ## Datasets
-| Dataset | Graphs | Vertices (V) | Edges (E) | Description |
-|----------|--------|--------------|------------|--------------|
-| small | 5 | 4–6 | 6–15 | Simple graphs for correctness check |
-| medium | 10 | 10–15 | 33–105 | Moderate graphs for timing comparison |
-| large | 10 | 20–28 | 190–378 | Dense graphs for performance testing |
-| extralarge | 3 | 55–87 | 1298–1780 | Heavy tests for scalability |
+
+| Dataset | Graphs | Vertices (Range) | Edges (Range) | Description |
+|----------|--------|------------------|----------------|--------------|
+| small | 5 | 7–20 | 11–65 | Small graphs for correctness and baseline testing |
+| medium | 10 | 30–292 | 369–993 | Moderate-size graphs for timing and scalability analysis |
+| large | 10 | 326–995 | 915–2785 | Dense graphs for stress and performance testing |
+| extralarge | 3 | 1400–2712 | 3870–6815 | Very large graphs for scalability and limit evaluation |
 
 Each graph was processed by both algorithms.  
-Execution time, operation counts, and MST results were stored in JSON and summarized in `performance_summary.csv`
+Execution time, operation counts, and MST results were saved in `performance_summary.csv`.
 
 ## Average Execution Time (ns)
 
-| Dataset | Prim | Kruskal |
-|----------|------|----------|
-| small | 10,766 | 7,210 |
-| medium | 74,227 | 61,937 |
-| large | 30,902 | 81,269 |
-| extralarge | 150,087 | 272,431 |
+| Dataset | Prim (avg ns) | Kruskal (avg ns) |
+|----------|----------------|------------------|
+| small | **11,454** | **13,996** |
+| medium | **153,844** | **216,968** |
+| large | **397,404** | **395,214** |
+| extralarge | **1,347,135** | **999,762** |
+
+> Prim’s algorithm outperformed Kruskal’s on large, dense graphs, while Kruskal remained competitive on small and sparse datasets.
 
 ## Algorithm Comparison
 
-| Algorithm | Time Complexity | Space | Key Idea |
-|------------|-----------------|--------|-----------|
-| **Prim** | O(E log V) | O(V + E) | Grows tree from a start vertex using a min-heap |
-| **Kruskal** | O(E log E) ≈ O(E log V) | O(E + V) | Sorts edges by weight and joins components using DSU |
+| Algorithm | Time Complexity | Space Complexity | Core Idea |
+|------------|-----------------|------------------|------------|
+| **Prim** | O(E log V) | O(V + E) | Expands the MST from a single vertex using a min-heap (priority queue). |
+| **Kruskal** | O(E log E) ≈ O(E log V) | O(E + V) | Sorts all edges by weight and joins components using Disjoint Set Union (Union-Find). |
 
-## Observations from Experiment
+## Observations
 
-**1. Small & Medium graphs**  
-Kruskal was slightly faster because sorting a small edge list is cheap and the DSU operations are lightweight.
+- **Small graphs:**  
+  Both algorithms produced identical MST costs. Kruskal’s DSU overhead made it slightly slower.
 
-**2. Large & ExtraLarge graphs**  
-Prim became faster. Kruskal’s edge sorting (`E log E`) dominates runtime when the graph is dense. Prim’s heap operations scale better when E is large.
+- **Medium graphs:**  
+  Prim became faster as edge density increased, since heap operations scale well with E.
 
-**3. MST cost**  
-Both algorithms always produced identical MST total cost, confirming correctness.
+- **Large graphs:**  
+  Both algorithms performed similarly, but Prim showed steadier execution under dense conditions.
 
+- **ExtraLarge graphs:**  
+  Prim handled the biggest graphs more efficiently, while Kruskal’s heavy sorting and DSU calls increased total time.
+
+- **MST Cost Consistency:**  
+  Prim and Kruskal always produced identical MST costs, confirming algorithmic correctness.
 ## Implementation Notes
-- **Measured values:**
-    - MST total cost
-    - Operation counts:
-        - Prim → `heapPush`, `heapPop`, `edgeChecks`
-        - Kruskal → `comparisons`, `findOps`, `unionOps`
-    - Execution time (averaged in nanoseconds)
 
-## Results Summary
+**Measured parameters:**
+- MST total cost  
+- Operation counts:  
+  - *Prim:* `heapPush`, `heapPop`, `edgeChecks`  
+  - *Kruskal:* `comparisons`, `findOps`, `unionOps`  
+- Execution time (nanoseconds)
 
-| Graph Type | Faster Algorithm | Reason |
-|-------------|------------------|---------|
-| Sparse (E close to V) | **Kruskal** | Sorting cost small, DSU efficient |
-| Dense (E much larger than V) | **Prim** | Avoids sorting all edges |
-| Large networks | **Prim** | Scales better with high edge count |
-| Real-world road-like graphs | **Kruskal** | Road networks are usually sparse |
-
-**Key takeaway:**  
-Both algorithms produce the same MST, but Prim scales better when graphs get large and dense.  
-Kruskal remains simpler and slightly faster for small, sparse datasets.
-
-## File Structure
-
+All results were automatically generated and analyzed from:
 src/main/java/mst/
-
-├── DataGenerator.java 
+├── DataGenerator.java
 ├── DataLoader.java
 ├── Edge.java
 ├── Graph.java
 ├── GraphVisualizer.java
 ├── KruskalAlgorithm.java
-├── Main.java 
+├── Main.java
 ├── MSTResult.java
 ├── PrimAlgorithm.java
-└── ResultsAnalyzer.java 
+└── ResultsAnalyzer.java
 
-
-Output:
+**Output files:**
 - `output_small.json`
 - `output_medium.json`
 - `output_large.json`
 - `output_extralarge.json`
 - `performance_summary.csv`
 
----
+## Results Summary
 
+| Graph Type | Faster Algorithm | Explanation |
+|-------------|------------------|--------------|
+| Sparse (E ≈ V) | **Kruskal** | Sorting overhead is small; DSU efficient |
+| Dense (E ≫ V) | **Prim** | Avoids sorting all edges; better heap scaling |
+| Large networks | **Prim** | Scales better with high edge count |
+| Road-like networks | **Kruskal** | Road graphs are generally sparse and tree-like |
+
+**Conclusion:**  
+Both algorithms produce the same MST cost.  
+**Prim’s algorithm scales better** for dense and large graphs, while **Kruskal’s simplicity** makes it ideal for small or sparse graphs.
+
+---
 ## References
 
-1. [GeeksforGeeks — Prim’s Algorithm (with Priority Queue)](https://www.geeksforgeeks.org/prims-algorithm-using-priority-queue-for-graph-representation/)
-2. [GeeksforGeeks — Kruskal’s Algorithm (Union-Find Implementation)](https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/)
-3. [Wikipedia — Minimum Spanning Tree Overview](https://en.wikipedia.org/wiki/Minimum_spanning_tree)
-5. Java Documentation
+1. [GeeksforGeeks — Prim’s Algorithm (Priority Queue)](https://www.geeksforgeeks.org/prims-algorithm-using-priority-queue-for-graph-representation/)  
+2. [GeeksforGeeks — Kruskal’s Algorithm (Union-Find)](https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/)  
+3. [Wikipedia — Minimum Spanning Tree](https://en.wikipedia.org/wiki/Minimum_spanning_tree)  
+4. Java SE Documentation  
 
-## Final Conclusion
-> Both Prim’s and Kruskal’s algorithms were successfully implemented, tested, and benchmarked.  
+---
+## Final Conclusion > Both Prim’s and Kruskal’s algorithms were successfully implemented, tested, and benchmarked.  
 > Kruskal performs better for small, sparse graphs; Prim becomes superior for large or dense graphs.  
 > Experimental data matches the theoretical expectations for MST algorithms.
