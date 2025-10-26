@@ -19,19 +19,19 @@ public class DataGenerator {
     }
 
     private static void generateSmallGraphs(String filePath) throws IOException {
-        generateGraphs(filePath, 5, 4, 6, 10, 30, 1);
+        generateGraphs(filePath, 5, 5, 30, 10, 70, 1);
     }
 
     private static void generateMediumGraphs(String filePath) throws IOException {
-        generateGraphs(filePath, 10, 10, 15, 30, 300, 6);
+        generateGraphs(filePath, 10, 30, 300, 60, 1000, 6);
     }
 
     private static void generateLargeGraphs(String filePath) throws IOException {
-        generateGraphs(filePath, 10, 20, 30, 300, 1000, 16);
+        generateGraphs(filePath, 10, 300, 1000, 900, 3000, 16);
     }
 
     private static void generateExtraLargeGraphs(String filePath) throws IOException {
-        generateGraphs(filePath, 3, 50, 100, 1000, 2000, 26);
+        generateGraphs(filePath, 3, 1000, 3000, 2500, 8000, 26);
     }
 
     private static void generateGraphs(String filePath, int numGraphs,
@@ -108,7 +108,7 @@ public class DataGenerator {
             gson.toJson(root, writer);
         }
 
-        System.out.println("Generated " + numGraphs + " graphs → " + filePath);
+        System.out.println("Generated " + numGraphs + " graphs: " + filePath);
     }
 
     private static int randomBetween(int min, int max) {
